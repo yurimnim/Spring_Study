@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<bean id="d" class="com.bit.exam05.Dept">
+		<property name="dno" value="0001" />
+		<property name="dname" value="자바부" />
+		<property name="dloc" value="신촌" />
+	</bean>
+</beans>

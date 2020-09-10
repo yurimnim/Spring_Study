@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="m" class="com.bit.exam10.Member">
+	<property name="id" value="javaking" />
+	<property name="pwd" value="java" />
+	<property name="name" value="고길동" />
+	<property name="addr" value="서울시 관악구 봉천동" />
+	<property name="tel" value="010-909-0909" />
+</bean>
+<bean id="md" class="com.bit.exam10.MemberDao">
+	<property name="member">
+		<ref bean="m" />
+	</property>
+</bean>
+</beans>
