@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="smsSender" class="com.bit.exam02.SmsSender" >
+	<property name="from" value="me" />
+	<property name="to" value="you" />
+</bean>
+<bean id="systemMoniter" class="com.bit.exam02.SystemMoniter" >	
+	<property name="periodTime" value="10" />
+	<property name="smsSender" ref="smsSender" />
+</bean>
+</beans>

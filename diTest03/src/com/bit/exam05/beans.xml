@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="sm" class="com.bit.exam05.SystemMoniter">
+		<property name="periodTime" value="10" />
+		<property name="smsSender">
+			<bean class="com.bit.exam05.SmsSender">
+				<property name="from" value="고길동" />
+				<property name="to" value="박둘리" />	
+			</bean>
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="smsSender" class="com.bit.exam07.SmsSender">
+		<property name="from" value="나"/>
+		<property name="to" value="너"/>		
+	</bean>
+	
+	<bean id="sender" class="com.bit.exam07.SmsSender">
+		<property name="from" value="너" />
+		<property name="to" value="나" />	
+	</bean>
+	
+	<bean id="sm" class="com.bit.exam07.SystemMoniter" autowire="byName">
+		<property name="periodTime" value="10" />
+	</bean>
+</beans>

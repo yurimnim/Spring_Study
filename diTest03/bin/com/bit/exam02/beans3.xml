@@ -1,0 +1,15 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="smsSender" 
+		class="com.bit.exam02.SmsSender"
+		p:from="송시욱"
+		p:to="임규희"	/>
+		
+	<bean id="sm" 
+		class="com.bit.exam02.SystemMonitor"
+		p:periodTime="10"
+		p:smsSender-ref="smsSender"/>	
+</beans>

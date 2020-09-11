@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="zipFilter" class="com.bit.exam06.ZipFilter" />
+	<bean id="encryptionFilter" class="com.bit.exam06.EncryptionFilter" />
+	<bean id="ph"  class="com.bit.exam06.ProtocolHandler">
+		<property name="filters">
+			<list>
+				<ref bean="zipFilter" />
+				<ref bean="encryptionFilter" />
+				<bean class="com.bit.exam06.HeaderFilter" />
+			</list>
+		</property>
+	</bean>
+</beans>
