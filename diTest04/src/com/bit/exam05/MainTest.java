@@ -10,5 +10,4 @@ public class MainTest {
 		DeptDao dao = (DeptDao)context.getBean("dao");
 		dao.insert();
 	}
-
 }
