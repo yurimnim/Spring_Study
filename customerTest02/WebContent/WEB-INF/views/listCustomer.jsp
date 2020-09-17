@@ -24,6 +24,5 @@
 </table>
 <br>
 <a href="insertCustomer.do"><b>고객등록</b></a> 
-
 </body>
 </html>

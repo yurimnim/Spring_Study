@@ -19,4 +19,12 @@ public class CustomerDao {
 	public int insert(CustomerVo c) {
 		return CustomerManager.insertCustomer(c);
 	}
+	
+	public int update(CustomerVo c) {
+		return CustomerManager.updateCustomer(c);
+	}
+	
+	public int delete(int custid) {
+		return CustomerManager.deleteCustomer(custid);
+	}
 }

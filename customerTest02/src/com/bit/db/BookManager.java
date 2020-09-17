@@ -8,60 +8,60 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.bit.vo.BookVo;
 import com.bit.vo.CustomerVo;
 
-public class CustomerManager {
+public class BookManager {
 	public static SqlSessionFactory sqlSessionFactory;
 	
 	static {
 		try {
 			String resource = "com/bit/db/sqlMapConfig.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
-			 sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-			 System.out.println("static 동작");
+			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		} catch (Exception e) {
-			System.out.println("CustomerManager 예외발생 " + e.getMessage());
-		}
+			System.out.println("BookManager 예외발생 " + e.getMessage());
+		}		
 	}
 	
-	public static List<CustomerVo> listAll() {
-		List<CustomerVo> list = null;
+	public static List<BookVo> listAll(String bookname) {
+		List<BookVo> list = null;
 		SqlSession session = sqlSessionFactory.openSession();
-		list = session.selectList("customer.selectAll");
+		list = session.selectList("book.listAll",bookname);
 		session.close();
 		return list;
 	}
 	
-	public static CustomerVo detailCustomer(int custid) {
-		CustomerVo c = null;
+	public static BookVo detail(int bookid) {
+		BookVo b = null;
 		SqlSession session = sqlSessionFactory.openSession();
-		c = session.selectOne("customer.selectById", custid);
+		b = session.selectOne("book.detail", bookid);
 		session.close();
-		return c;
+		return b;	
 	}
 	
-	public static int insertCustomer(CustomerVo c) {
+	public static int insert(BookVo b) {
 		int re = -1;
 		SqlSession session = sqlSessionFactory.openSession(true);
-		re = session.insert("customer.insert", c);	
+		re = session.insert("book.insert", b);
 		session.close();
-		return re;
+		return re;	
 	}
 	
-	public static int updateCustomer(CustomerVo c) {
+	public static int update(BookVo b) {
 		int re = -1;
 		SqlSession session = sqlSessionFactory.openSession(true);
-		re = session.update("customer.update", c);	
+		re = session.insert("book.update", b);
 		session.close();
-		return re;
+		return re;	
 	}
 	
-	public static int deleteCustomer(int custid) {
+	public static int delete(int bookid) {
 		int re = -1;
 		SqlSession session = sqlSessionFactory.openSession(true);
-		re = session.delete("customer.delete", custid);
+		re = session.insert("book.delete", bookid);
 		session.close();
-		return re;
+		return re;	
 	}
 }
 

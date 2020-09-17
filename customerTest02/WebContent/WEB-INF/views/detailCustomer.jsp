@@ -14,7 +14,7 @@
 주소: ${c.address } <br>
 전화번호:${c.phone } <br>
 <br>
-<a href="listCustomer.do">목록</a> | 삭제 | 수정 | <a href="insertCustomer.do">새등록 </a>
+<a href="listCustomer.do">목록</a> | <a href="deleteCustomer.do?custid=${c.custid }">삭제</a> | <a href="updateCustomer.do?custid=${c.custid }">수정</a> | <a href="insertCustomer.do">새등록 </a>
 
 </body>
 </html>
