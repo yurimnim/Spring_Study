@@ -11,7 +11,7 @@
 <hr>
 도서ID: ${b.bookid }<br>
 도서명 : ${b.bookname }<br>
-저자 : ${b.publisher }<br>
+출판사 : ${b.publisher }<br>
 도서가격: ${b.price }원<br> 
 <br>
 &nbsp;<a href="updateBook.do?bookid=${b.bookid }">수정</a>&nbsp; |&nbsp;<a href="deleteBook.do?bookid=${b.bookid }">삭제</a>&nbsp;| &nbsp;<a href="insertBook.do">새등록</a>&nbsp; | &nbsp;<a href="listBook.do">목록</a>&nbsp;

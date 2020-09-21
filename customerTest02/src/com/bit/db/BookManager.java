@@ -1,6 +1,7 @@
 package com.bit.db;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -24,10 +25,10 @@ public class BookManager {
 		}		
 	}
 	
-	public static List<BookVo> listAll(String bookname) {
+	public static List<BookVo> listAll(HashMap map) {
 		List<BookVo> list = null;
 		SqlSession session = sqlSessionFactory.openSession();
-		list = session.selectList("book.listAll",bookname);
+		list = session.selectList("book.listAll",map);
 		session.close();
 		return list;
 	}

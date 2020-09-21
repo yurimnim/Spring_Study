@@ -3,15 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
+  
 <mapper namespace="book">
   <select id="listAll" resultType="bookVo">
-    SELECT * FROM book
-  <where>
-    <if test="bookname != null">
-         bookname like #{bookname }
-    </if>
-  </where>
-  order by bookid
+    SELECT * FROM book 
+    <if test="search != null and search !=''">
+         where ${category } like '%'||#{search }||'%' 
+        <if test="search = price">
+         	and price #{op } #{search }
+    	</if> 
+    </if> 
+     
+    <if test="sort != null ">
+ 	 order by ${sort } desc
+  </if>
   </select>
   
    <select id="detail" resultType="bookVo">

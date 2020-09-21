@@ -1,5 +1,6 @@
 package com.bit.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -10,8 +11,8 @@ import com.bit.vo.BookVo;
 @Repository
 public class BookDao {
 	
-	public List<BookVo> listAll(String bookname) {
-		return BookManager.listAll(bookname);
+	public List<BookVo> listAll(HashMap map) {
+		return BookManager.listAll(map);
 	}
 	
 	public BookVo detail(int bookid) {

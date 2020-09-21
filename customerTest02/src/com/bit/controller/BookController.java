@@ -1,11 +1,12 @@
 package com.bit.controller;
-
+import java.util.HashMap;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.bit.dao.BookDao;
 import com.bit.vo.BookVo;
 
@@ -16,16 +17,36 @@ public class BookController {
 	private BookDao dao;
 	
 	@RequestMapping("/listBook.do")
-	public ModelAndView bookList(String bookname) {
-		System.out.println(bookname);
+	public ModelAndView bookList(String search, String category, String sort, String op,HttpServletRequest request, HttpSession session) {
+//		if(search !=null&& search.trim().equals("")) {
+//			search=null;
+//		}
+		
+
+		if(search == null && session.getAttribute("search")!=null){
+			search=(String)session.getAttribute("search");	
+			category=(String)session.getAttribute("category");	
+		}
+		
+		HashMap map = new HashMap();
+		map.put("search", search);
+		map.put("category", category);
+		map.put("sort", sort);
+		map.put("op", op);
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("list", dao.listAll(bookname));
+		
+		if(search !=null) {
+			session.setAttribute("search", search);		
+			session.setAttribute("category", category);	
+		}
+		
+		mav.addObject("list", dao.listAll(map));
 		return mav;
 	}
 	
 	@RequestMapping("/detailBook.do")
 	public ModelAndView bookDetail(int bookid) {
-		System.out.println(bookid);
+		//System.out.println(bookid);
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("b", dao.detail(bookid));
 		return mav;
