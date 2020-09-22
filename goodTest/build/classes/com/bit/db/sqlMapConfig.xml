@@ -7,6 +7,7 @@
 
 <typeAliases>
 	<typeAlias type="com.bit.vo.GoodsVo" alias="goodsVo"/>
+	<typeAlias type="com.bit.vo.BoardVo" alias="boardVo"/>
 </typeAliases>
 
   <environments default="development">
@@ -22,5 +23,6 @@
   </environments>
   <mappers>
     <mapper resource="com/bit/db/GoodMapper.xml"/>
+    <mapper resource="com/bit/db/BoardMapper.xml"/>
   </mappers>
 </configuration>
