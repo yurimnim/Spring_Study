@@ -1,0 +1,26 @@
+emp테이블에 email 컬럼을 추가하자
+alter table emp10 add email varchar2(50);
+
+update emp set email='u007x2@me.com' where ename='이유림';
+
+update emp10 set email='dbtjs0221@gmail.com' where empno=1003;
+update emp10 set email='mk928000000@gmail.com' where empno=1012;
+update emp10 set email='ssd2052@gmail.com' where empno=1008;
+update emp10 set email='hoja2242@naver.com' where empno=1004;
+update emp10 set email='love88911@naver.com' where empno=1019;
+update emp10 set email='xxeongyou@gmail.com' where empno=1025;
+update emp10 set email='inhalin.kim@gmail.com' where empno=1015;
+update emp10 set email='youngdae135@google.com' where empno=1005;
+update emp10 set email='u007x2@me.com' where empno=1023;
+update emp10 set email='wotjd0860@naver.com' where empno=1017;
+update emp10 set email='laundryday@naver.com' where empno=1016;
+update emp10 set email='k65415529@gmail.com' where empno=1011;
+update emp10 set email='jigmund37@naver.com' where empno=1014;
+update emp10 set email='jwon416@gmail.com' where empno=1001;
+update emp10 set email='kooky1001@gmail.com' where empno=1006;
+update emp10 set email='nayoung0456@gmail.com' where empno=1003;
+update emp10 set email='hsungho1023@gmail.com' where empno=1022;
+update emp10 set email='dlarbgml0112@gmail.com' where empno=1002;
+update emp10 set email='siwook1030@naver.com' where empno=1020;
+
+insert into emp10 values(1027,'유관순', '사원', 1000, sysdate, 100,10,100,'rola70@nate.com');
